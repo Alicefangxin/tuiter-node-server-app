@@ -1,23 +1,28 @@
 import posts from "./tuits.js";
 let tuits = posts;
 
-const createTuit = (req, res) => {
-    const newTuit = req.body;
-    newTuit._id = (new Date()).getTime()+'';
-    newTuit.likes = 0;
-    newTuit.dislikes = 0;
-    newTuit.comments = 0;
-    newTuit.userName = "Alamu Ramasamy";
-    newTuit.handle = "al_ra";
-    newTuit.logoImage = "/images/profile.jpg";
 
-    newTuit.retweets = 0;
-    tuits.push(newTuit);
-    res.json(newTuit);
+    const createTuit = (req, res) => {
+        const newTuit = req.body;
+        newTuit._id = (new Date()).getTime() + '';
+        newTuit.likes = 0;
+        newTuit.dislikes = 0;
+        newTuit.comments = 0;
+        newTuit.userName = "Alamu Ramasamy";
+        newTuit.handle = "al_ra";
+        newTuit.logoImage = "/images/profile.jpg";
+
+        newTuit.retweets = 0;
+        tuits.push(newTuit);
+        res.json(newTuit);
+    }
+
+
+const findAllTuits = (req, res) => {
+    console.log('find all tuits:' + tuits);
+    res.json(tuits);
 }
 
-const findAllTuits = (req, res) =>
-    res.json(tuits);
 
 const updateTuit = (req, res) => {
     const tuitdIdToUpdate = req.params.tid;
@@ -38,4 +43,5 @@ const tuitController = (app) => {
     app.put('/api/tuits/:tid', updateTuit);
     app.delete('/api/tuits/:tid', deleteTuit);
 }
+
 export default tuitController;
