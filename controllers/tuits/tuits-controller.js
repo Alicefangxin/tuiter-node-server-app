@@ -6,13 +6,13 @@ const createTuit = (req, res) => {
         const newTuit = req.body;
         newTuit._id = (new Date()).getTime() + '';
         newTuit.likes = 0;
-        newTuit.dislikes = 0;
-        newTuit.comments = 0;
-        newTuit.userName = "Jose Annunziato";
-        newTuit.handle = "jannunzi";
-        newTuit.logoImage = "/images/profile.jpg";
+        newTuit.dislikes = 32;
+        newTuit.replies = 0;
+        newTuit.userName = "NASA";
+        newTuit.handle = "nasa";
+        newTuit.logoImage = "./images/nasalogo.jpg";
 
-        newTuit.retweets = 0;
+        newTuit.retuits = 0;
         tuits.push(newTuit);
         res.json(newTuit);
 }
