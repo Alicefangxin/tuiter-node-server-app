@@ -10,7 +10,7 @@ const createTuit = (req, res) => {
         newTuit.replies = 0;
         newTuit.userName = "NASA";
         newTuit.handle = "nasa";
-        newTuit.logoImage = "./images/nasalogo.jpg";
+        newTuit.logoImage = "nasalogo.jpg";
 
         newTuit.retuits = 0;
         tuits.push(newTuit);
