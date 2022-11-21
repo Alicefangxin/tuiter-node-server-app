@@ -8,8 +8,8 @@ let tuits = posts;
         newTuit.likes = 0;
         newTuit.dislikes = 0;
         newTuit.comments = 0;
-        newTuit.userName = "Alamu Ramasamy";
-        newTuit.handle = "al_ra";
+        newTuit.userName = "Jose Annunziato";
+        newTuit.handle = "jannunzi";
         newTuit.logoImage = "/images/profile.jpg";
 
         newTuit.retweets = 0;
@@ -19,8 +19,7 @@ let tuits = posts;
 
 
 const findAllTuits = (req, res) => {
-    console.log('find all tuits:' + tuits);
-    res.json(tuits);
+        res.json(tuits);
 }
 
 
