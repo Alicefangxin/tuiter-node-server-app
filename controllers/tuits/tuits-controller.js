@@ -2,7 +2,7 @@ import posts from "./tuits.js";
 let tuits = posts;
 
 
-    const createTuit = (req, res) => {
+const createTuit = (req, res) => {
         const newTuit = req.body;
         newTuit._id = (new Date()).getTime() + '';
         newTuit.likes = 0;
@@ -15,7 +15,7 @@ let tuits = posts;
         newTuit.retweets = 0;
         tuits.push(newTuit);
         res.json(newTuit);
-    }
+}
 
 
 const findAllTuits = (req, res) => {
